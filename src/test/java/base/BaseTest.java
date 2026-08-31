@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driver.DriverFactory;
 import pages.HomePage;
+import utils.TestData;
 
 
 public class BaseTest {
@@ -24,6 +25,7 @@ public class BaseTest {
 	protected static final Logger logger = LogManager.getLogger(BaseTest.class);
 
 	protected HomePage homePage;
+	protected TestData testData;
 	
 	@BeforeEach
 	void setUp(org.junit.jupiter.api.TestInfo testInfo) {		
@@ -37,7 +39,7 @@ public class BaseTest {
         
         homePage = new HomePage(driver);
 		homePage.open();
-	
+		testData=new TestData();
 	}
 
 	
