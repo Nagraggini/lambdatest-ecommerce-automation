@@ -10,7 +10,16 @@ class RegistrationTest extends BaseTest {
 
 	@Test
 	void successfulRegistrationTest	() {
-		 homePage.open();
+		  
+		 assertEquals("Your Account Has Been Created!",homePage.clickMyAccountButton().clickContinueButton()
+				 	 .fillRegistrationForm(testData.getFirstName(), 
+						 testData.getLastName(), 
+						 testData.getEmail(),
+						 testData.getTelephone(),  testData.getPassword())
+				 .acceptPrivacyPolicy() 
+				 .clickContinue().getSuccessfulAccountCreatedMessage());
+		 //https://ecommerce-playground.lambdatest.io/index.php?route=account/success
+		
 	}
 
 }
