@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountPage extends BasePage{
 
-	private final By successfulLabel=By.cssSelector("[class='page-title my-3'] ");
+	private final By successfulLabel=By.cssSelector("[class='page-title my-3']");
 	
 	public AccountPage(WebDriver driver) {
 		super(driver);
 		// TODO oldal betöltésének validálása validálás
 	}
 	
+	//Your Account Has Been Created!
 	public String getSuccessfulAccountCreatedMessage() {
 		return getText(successfulLabel);
 	}

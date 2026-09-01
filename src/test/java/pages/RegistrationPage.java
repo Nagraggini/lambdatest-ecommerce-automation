@@ -13,6 +13,9 @@ public class RegistrationPage extends BasePage{
 	private final By confirmPasswordField = By.id("input-confirm");
 	private final By privacyPolicyCheckbox = By.xpath("//label[@for='input-agree']");
 	private final By continueButton = By.xpath("//input[@value='Continue']");
+	
+	private final By warningYouMustAgreeToThePrivacyPolicyLabel=
+			By.cssSelector("[class='alert alert-danger alert-dismissible']");
 
 	public RegistrationPage(WebDriver driver) {
 		super(driver);
@@ -37,6 +40,16 @@ public class RegistrationPage extends BasePage{
 	public AccountPage clickContinue() {
 		click(continueButton);
 		return new AccountPage(driver);
+	}
+	
+	public RegistrationPage clickContinueAndNotGoToAccountPage() {
+		click(continueButton);
+		return this;
+	}
+	
+	// Warning: You must agree to the Privacy Policy!
+	public String getwarningYouMustAgreeToThePrivacyPolicyMessage() {
+		return getText(warningYouMustAgreeToThePrivacyPolicyLabel);
 	}
 
 }
