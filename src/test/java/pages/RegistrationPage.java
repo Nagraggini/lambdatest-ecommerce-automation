@@ -11,11 +11,20 @@ public class RegistrationPage extends BasePage{
 	private final By telephoneField = By.id("input-telephone");
 	private final By passwordField = By.id("input-password");
 	private final By confirmPasswordField = By.id("input-confirm");
+	
 	private final By privacyPolicyCheckbox = By.xpath("//label[@for='input-agree']");
+	private final By privacyPolicyLink =
+	        By.xpath("//form//a[normalize-space()='Privacy Policy']");
+	
+	private final By privacyPolicyWindowHeader =
+	        By.xpath("//h4[normalize-space()='Privacy Policy']");
+	
+	
 	private final By continueButton = By.xpath("//input[@value='Continue']");
 	
 	private final By warningYouMustAgreeToThePrivacyPolicyLabel=
 			By.cssSelector("[class='alert alert-danger alert-dismissible']");
+	
 
 	public RegistrationPage(WebDriver driver) {
 		super(driver);
@@ -37,6 +46,16 @@ public class RegistrationPage extends BasePage{
 		return this;
 	}
 
+	public RegistrationPage clickPrivacyPolicyLink() {
+		click(privacyPolicyLink);
+		return new RegistrationPage(driver);
+	}
+	
+	// Privacy Policy
+	public String getPrivacyPolicyHeaderText() {
+		return getText(privacyPolicyWindowHeader);
+	}
+	
 	public AccountPage clickContinue() {
 		click(continueButton);
 		return new AccountPage(driver);

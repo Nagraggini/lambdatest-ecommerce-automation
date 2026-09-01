@@ -14,10 +14,10 @@ import pages.AccountPage;
 class RegistrationTest extends BaseTest {
 
 	/**
-	 * TC01 Sikeres regisztráció ellenőrzése.
+	 * TC01 Sikeres regisztráció ellenőrzése
 	 */
 	@Test
-	@DisplayName("TC01 - Sikeres regisztráció és bejelentkezés ellenőrzése.")	
+	@DisplayName("TC01 Sikeres regisztráció ellenőrzése")	
 	void successfulRegistrationTest	() {
 		AccountPage account=homePage.clickMyAccountButton()
 			 	 .clickContinueButton()
@@ -29,17 +29,16 @@ class RegistrationTest extends BaseTest {
 			 .clickContinue();
 		
 		 assertEquals("Your Account Has Been Created!",account.getSuccessfulAccountCreatedMessage());
-		 
+		 		
 		// Kijelentkezés.
-		account.clickLogout();	
-		
+		account.clickLogout();			
 	}
 
 	/**
-	 * TC02 Sikertelen regisztráció ellenőrzése.
+	 * TC02 Sikertelen regisztráció ellenőrzése
 	 */
 	@Test
-	@DisplayName("TC02 - Sikertelen regisztráció kötelező keresztnév hiánya miatt.")
+	@DisplayName("TC02 Sikertelen regisztráció ellenőrzése")
 	void unsuccessfulRegistrationTest() {		  
 		 assertEquals("Warning: You must agree to the Privacy Policy!",homePage.clickMyAccountButton()
 				 	 .clickContinueButton()

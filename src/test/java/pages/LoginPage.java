@@ -15,6 +15,9 @@ public class LoginPage extends BasePage {
 	private final By passwordInput=By.id("input-password");
 	private final By loginButton=By.cssSelector("input[value='Login']");
 	
+	private final By warningLabel=
+			By.cssSelector("[class='alert alert-danger alert-dismissible']");
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO oldal betöltésének validálása validálás
@@ -36,4 +39,14 @@ public class LoginPage extends BasePage {
 		click(loginButton);
 		return new AccountPage(driver);
 	}
+	
+	public LoginPage clickLoginButtonAndNotGoToAccountPage() {
+		click(loginButton);
+		return this;
+	}
+	
+	// Warning: No match for E-Mail Address and/or Password.
+		public String getwarningLabelMessage() {
+			return getText(warningLabel);
+		}
 }
