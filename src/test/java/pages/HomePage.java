@@ -15,6 +15,9 @@ public class HomePage extends BasePage{
 	
 	private final By toptrendingcategoriesLabel=By.xpath("//h3[normalize-space()='Top Trending Categories']");
 
+	// Top Trending Categories
+	private final By tabletCategoryButton=By.xpath("//div//h4[normalize-space()='Tablets']");
+	
 	public HomePage(WebDriver driver) {
 		super(driver);		
 		
@@ -45,6 +48,12 @@ public class HomePage extends BasePage{
 		click(registrationButton);
 		return new RegistrationPage(driver);
 	}
+	
+	public CategoryPage clickTabletCategoryButton() {
+		click(tabletCategoryButton);
+		return new CategoryPage(driver);
+	}
+	
 	
 	
 }

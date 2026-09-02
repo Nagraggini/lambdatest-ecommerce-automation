@@ -24,6 +24,5 @@ class PrivacyPolicyTest extends BaseTest  {
 			 	 .clickContinueButton().clickPrivacyPolicyLink();		
 		
 		 assertEquals("Privacy Policy",registrationPage.getPrivacyPolicyHeaderText());		 					
-	}
-
+	}	
 }
