@@ -22,6 +22,9 @@ public class HomePage extends BasePage{
 			By.xpath("//span[normalize-space()='Phone, Tablets & Ipod']");
 	
 	
+	private final By firstIMacProduct=
+			By.xpath("(//img[@title='iMac'])[2]");
+	
 	public HomePage(WebDriver driver) {
 		super(driver);			
 	}
@@ -41,25 +44,32 @@ public class HomePage extends BasePage{
 		return this;
 	}
 
-	public LoginPage clickMyAccountButton() {
+	public LoginPage clickMyAccount() {
 		click(myAccountButton);
 		return new LoginPage(driver);
 	}
 	
 		
-	public RegistrationPage clickRegistrationButton() {
+	public RegistrationPage clickRegistration() {
 		click(registrationButton);
 		return new RegistrationPage(driver);
 	}
 	
-	public HomePage clickShopByCategoryButton() {
+	public HomePage clickShopByCategory() {
 		click(shopByCategoryButton);
 		return this;
 	}
 	
-	public CategoryPage clickPhoneTabletIpodCategoryButton() {
+	public CategoryPage clickPhoneTabletIpodCategory() {
 		click(phoneTabletIpodCategoryButton);
 		return new CategoryPage(driver);
 	}
+	
+	
+	public ProductPage clickFirstIMacProduct() {
+		click(firstIMacProduct);
+		return new ProductPage(driver);
+	}
+	
 	
 }

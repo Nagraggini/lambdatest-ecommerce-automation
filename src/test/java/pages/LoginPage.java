@@ -18,13 +18,15 @@ public class LoginPage extends BasePage {
 	private final By warningLabel=
 			By.cssSelector("[class='alert alert-danger alert-dismissible']");
 	
+	private final By logoutLink = By.linkText("Logout");
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO oldal betöltésének validálása validálás
 		waitUntilTextToBe(newCustomerLabel, "New Customer");
 	}
 	
-	public RegistrationPage clickContinueButton() {
+	public RegistrationPage clickContinue() {
 		click(continueButton);
 		return new RegistrationPage(driver);
 	}
@@ -48,5 +50,10 @@ public class LoginPage extends BasePage {
 	// Warning: No match for E-Mail Address and/or Password.
 		public String getwarningLabelMessage() {
 			return getText(warningLabel);
-		}
+	}
+		
+	public HomePage clickLogout() {
+		click(logoutLink);
+		return new HomePage(driver);
+	}
 }
