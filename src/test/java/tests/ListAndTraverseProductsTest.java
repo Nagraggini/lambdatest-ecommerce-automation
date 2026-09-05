@@ -26,8 +26,8 @@ class ListAndTraverseProductsTest extends BaseTest  {
 	@Test
 	@DisplayName("TC05 Terméklista+validáció ellenőrzés ")	
 	void checkProductListTest() {
-		CategoryPage categoryPage=homePage.clickShopByCategoryButton()
-				.clickPhoneTabletIpodCategoryButton();		
+		CategoryPage categoryPage=homePage.clickShopByCategory()
+				.clickPhoneTabletIpodCategory();		
 			
 		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
 		

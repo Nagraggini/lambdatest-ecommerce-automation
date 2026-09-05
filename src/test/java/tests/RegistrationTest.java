@@ -19,8 +19,8 @@ class RegistrationTest extends BaseTest {
 	@Test
 	@DisplayName("TC01 Sikeres regisztráció és bejelentkezés ellenőrzése")	
 	void successfulRegistrationTest	() {
-		AccountPage account=homePage.clickMyAccountButton()
-			 	 .clickContinueButton()
+		AccountPage account=homePage.clickMyAccount()
+			 	 .clickContinue()
 			 	 .fillRegistrationForm(testData.getFirstName(), 
 					 testData.getLastName(), 
 					 testData.getEmail(),
@@ -40,8 +40,8 @@ class RegistrationTest extends BaseTest {
 	@Test
 	@DisplayName("TC02 Sikertelen regisztráció ellenőrzése")
 	void unsuccessfulRegistrationTest() {		  
-		 assertEquals("Warning: You must agree to the Privacy Policy!",homePage.clickMyAccountButton()
-				 	 .clickContinueButton()
+		 assertEquals("Warning: You must agree to the Privacy Policy!",homePage.clickMyAccount()
+				 	 .clickContinue()
 				 	 .fillRegistrationForm(testData.getFirstName(), 
 						 testData.getLastName(), 
 						 testData.getEmail(),

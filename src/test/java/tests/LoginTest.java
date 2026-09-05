@@ -20,7 +20,7 @@ class LoginTest extends BaseTest{
 	@Test
 	@DisplayName("TC04 Sikertelen bejelentkezés hibás jelszóval")
 	void unsuccessfulLoginTest() {
-		LoginPage loginPage=homePage.clickMyAccountButton()
+		LoginPage loginPage=homePage.clickMyAccount()
 				.fillEmailAndPasswordFields(testData.getEmail(), testData.getPassword())
 				.clickLoginButtonAndNotGoToAccountPage();
 		 

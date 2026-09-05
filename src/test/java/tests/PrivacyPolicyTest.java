@@ -20,8 +20,8 @@ class PrivacyPolicyTest extends BaseTest  {
 	@Test
 	@DisplayName("TC04 Adatkezelési nyilatkozat ellenőrzése")	
 	void successfulRegistrationTest	() {
-		RegistrationPage registrationPage=homePage.clickMyAccountButton()
-			 	 .clickContinueButton().clickPrivacyPolicyLink();		
+		RegistrationPage registrationPage=homePage.clickMyAccount()
+			 	 .clickContinue().clickPrivacyPolicyLink();		
 		
 		 assertEquals("Privacy Policy",registrationPage.getPrivacyPolicyHeaderText());		 					
 	}	
