@@ -2,6 +2,8 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import base.BaseTest;
@@ -9,9 +11,15 @@ import pages.AccountPage;
 import pages.AddressBookPage;
 import utils.AddressData;
 
+@Tag("ui")
+@Tag("regression")
 class FullPurchaseWorkflowTest extends BaseTest  {
 
+	/**
+	 * TC06 Egy vásárlási folyamat e2e tesztje
+	 */
 	@Test
+	@DisplayName("TC06 Egy vásárlási folyamat e2e tesztje")
 	void fullPurchaseWorkflowE2ETest() {
 		
 		AddressData address = new AddressData(
