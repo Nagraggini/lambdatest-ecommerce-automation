@@ -14,25 +14,9 @@ import utils.ConfigReader;
 @Tag("ui")
 @Tag("regression")
 class LoginTest extends BaseTest{
-
-	/**
-	 * TC03 Sikeres bejelentkezés ellenőrzése
-	 */
-	@Test
-	@DisplayName("TC03 Sikeres bejelentkezés ellenőrzése")
-	void successfulLoginTest() {
-		AccountPage account=homePage.clickMyAccountButton()
-				.fillEmailAndPasswordFields(ConfigReader.getEmail(), ConfigReader.getPassword())
-				.clickLoginButton();
-		
-		assertTrue(account.waitUntilLogoutLinkIsVisible());
-		
-		// Kijelentkezés.
-		account.clickLogout();				
-	}
 	
 	/**
-	 * TC04 Sikertelen bejelentkezés hibás jelszóval
+	 * TC03 Sikertelen bejelentkezés hibás jelszóval
 	 */
 	@Test
 	@DisplayName("TC04 Sikertelen bejelentkezés hibás jelszóval")

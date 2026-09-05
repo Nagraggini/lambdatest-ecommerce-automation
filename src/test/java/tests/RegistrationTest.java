@@ -14,10 +14,10 @@ import pages.AccountPage;
 class RegistrationTest extends BaseTest {
 
 	/**
-	 * TC01 Sikeres regisztráció ellenőrzése
+	 * TC01 Sikeres regisztráció és bejelentkezés ellenőrzése
 	 */
 	@Test
-	@DisplayName("TC01 Sikeres regisztráció ellenőrzése")	
+	@DisplayName("TC01 Sikeres regisztráció és bejelentkezés ellenőrzése")	
 	void successfulRegistrationTest	() {
 		AccountPage account=homePage.clickMyAccountButton()
 			 	 .clickContinueButton()
