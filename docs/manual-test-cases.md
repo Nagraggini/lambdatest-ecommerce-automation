@@ -11,16 +11,16 @@ Az alábbiakban részletesen, a vizsgaremek követelményeihez igazítva összeg
 
 Vizsgakövetelmény									Lefedő teszteset(ek)
 Regisztráció										TC01, TC02
-Bejelentkezés										TC03, TC04
-Adatkezelési nyilatkozat használata					TC01, TC05
-Adatok listázása									TC06
-Több oldalas lista bejárása							TC07
-Új adat bevitel										TC08
-Ismételt és sorozatos adatbevitel adatforrásból		TC09
-Meglévő adat módosítás								TC10, TC13
-Adat vagy adatok törlése							TC11, TC13
-Adatok lementése felületről							TC12
-Kijelentkezés										TC01, TC03
+Bejelentkezés										TC03, 
+Adatkezelési nyilatkozat használata					TC01, TC04
+Adatok listázása									TC05
+Több oldalas lista bejárása							TC06
+Új adat bevitel										TC07
+Ismételt és sorozatos adatbevitel adatforrásból		TC08
+Meglévő adat módosítás								TC09, TC12
+Adat vagy adatok törlése							TC10, TC12
+Adatok lementése felületről							TC11
+Kijelentkezés										TC01
 
 TODO!!! külön excel kell és ide,csak képet csatolj.
 
@@ -57,23 +57,7 @@ Teszt lépések:
 Elvárt eredmény: Sikertelen a regisztráció és az oldal tetején megjelenik megjelenik egy hibaüzenet: 
 "Warning: You must agree to the Privacy Policy!"
 
-## TC03 Sikeres bejelentkezés ellenőrzése
-
-Teszt rövid leírása: A regisztrált fiókkal való sikeres belépés.
-
-Előfeltétel: Már létező felhasználói adatok.
-
-Teszt lépések:
-
-1. Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-2. My account → Login oldal megnyitása.
-3. Érvényes E-Mail Address megadása.
-4. Érvényes Password megadása.
-5. Login gombra kattintás.
-
-Elvárt eredmény: Megjelenik a My Account oldal. Elérhetők a fiókfunkciók pl.: Logout.
-
-## TC04 Sikertelen bejelentkezés hibás jelszóval
+## TC03 Sikertelen bejelentkezés hibás jelszóval
 
 Teszt rövid leírása: Bejelentkezési kísérlet érvényes e-mail-címmel, de hibás jelszóval.
 
@@ -93,7 +77,7 @@ Elvárt eredmény: A bejelentkezés sikertelen. Az oldal tetején megjelenik a k
 
 A My Account oldal védett funkciói nem érhetők el.
 
-## TC05 Adatkezelési nyilatkozat ellenőrzése
+## TC04 Adatkezelési nyilatkozat ellenőrzése
 
 Teszt rövid leírása: A Privacy Policy hivatkozás és az adatkezelési nyilatkozat tartalmának ellenőrzése.
 
@@ -106,7 +90,7 @@ A megjelenő ablak címének ellenőrzése.
 
 Elvárt eredmény: A Privacy Policy tartalma olvashatóan megjelenik. 
 
-## TC06 Termékek listázásának ellenőrzése
+## TC05 Termékek listázásának ellenőrzése
 
 Teszt rövid leírása: A termékek listázásának ellenőrzése egy kiválasztott kategóriában.
 
@@ -122,7 +106,7 @@ Annak ellenőrzése, hogy legalább egy termék látható a listában.
 
 Elvárt eredmény: A „Tablets” kategóriaoldal hiba nélkül betöltődik. A terméklista nem üres, és a termékek neve, ára, valamint az „Add to Cart” lehetőség megjelenik.
 
-## TC07 Többoldalas terméklista bejárásának ellenőrzése
+## TC06 Többoldalas terméklista bejárásának ellenőrzése
 
 Teszt rövid leírása: A több oldalból álló terméklista lapozási funkciójának ellenőrzése.
 
@@ -142,7 +126,7 @@ Az utolsó oldal terméklistájának ellenőrzése.
 
 Elvárt eredmény: Minden kiválasztott oldal megfelelően betöltődik. Az aktív oldalszám és az URL lapozási paramétere megváltozik. Minden megnyitott oldalon termékek jelennek meg, és az utolsó oldalról nem lehet továbblépni.
 
-## TC08 Új cím hozzáadásának ellenőrzése
+## TC07 Új cím hozzáadásának ellenőrzése
 
 Teszt rövid leírása: Új cím sikeres hozzáadása a felhasználó címjegyzékéhez.
 
@@ -163,7 +147,7 @@ Kattintás a „Continue” gombra.
 
 Elvárt eredmény: Az új cím sikeresen létrejön. Az oldalon sikeres mentésről szóló üzenet jelenik meg, és az új cím látható az Address Book Entries listában.
 
-## TC09 Ismételt és sorozatos címbevitel adatforrásból
+## TC08 Ismételt és sorozatos címbevitel adatforrásból
 
 Teszt rövid leírása: Több cím egymás utáni rögzítése külső CSV-adatforrásból beolvasott adatok alapján.
 
@@ -196,7 +180,7 @@ A folyamat megismétlése a CSV-fájl összes adatsorával.
 
 Elvárt eredmény: A rendszer a CSV-fájlban szereplő összes címet sikeresen rögzíti. Minden adatforrásbeli sorhoz pontosan egy cím jön létre, és a felületen megjelenő adatok megegyeznek a CSV-fájl adataival.
 
-## TC10 Meglévő cím módosításának ellenőrzése
+## TC09 Meglévő cím módosításának ellenőrzése
 
 Teszt rövid leírása: Egy korábban létrehozott cím adatainak módosítása.
 
@@ -219,7 +203,7 @@ A módosított cím megkeresése az Address Book Entries listában.
 
 Elvárt eredmény: A cím módosítása sikeres. Az oldalon sikeres mentésről szóló üzenet jelenik meg. A címjegyzékben már az új City és Post Code értékek láthatók, a korábbi értékek pedig nem jelennek meg.
 
-## TC11 Meglévő cím törlésének ellenőrzése
+## TC10 Meglévő cím törlésének ellenőrzése
 
 Teszt rövid leírása: Egy korábban létrehozott cím törlése a felhasználó címjegyzékéből.
 
@@ -242,7 +226,7 @@ A címjegyzék ismételt ellenőrzése.
 
 Elvárt eredmény: A kiválasztott cím sikeresen törlődik. A törölt cím már nem jelenik meg az Address Book Entries listában, a többi cím pedig változatlanul megmarad.
 
-## TC12 Termékadatok lementésének ellenőrzése
+## TC11 Termékadatok lementésének ellenőrzése
 
 Teszt rövid leírása: A terméklista adatainak összegyűjtése a felületről és CSV-fájlba történő mentése.
 
@@ -266,7 +250,7 @@ Az első és az utolsó mentett termék adatainak összehasonlítása a felület
 
 Elvárt eredmény: Az output/products.csv fájl sikeresen létrejön. A fájl tartalmazza a name és price fejlécet. Az adatsorok száma megegyezik a felületről összegyűjtött termékek számával, és a mentett terméknevek és árak helyesek.
 
-## TC13 Kosárban lévő termék módosításának és törlésének ellenőrzése
+## TC12 Kosárban lévő termék módosításának és törlésének ellenőrzése
 
 Teszt rövid leírása: Egy termék kosárba helyezése, mennyiségének módosítása, majd a termék törlése.
 
