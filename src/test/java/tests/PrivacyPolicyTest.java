@@ -15,10 +15,10 @@ import pages.RegistrationPage;
 class PrivacyPolicyTest extends BaseTest  {
 
 	/**
-	 * TC05 Adatkezelési nyilatkozat ellenőrzése
+	 * TC04 Adatkezelési nyilatkozat ellenőrzése
 	 */
 	@Test
-	@DisplayName("TC05 Adatkezelési nyilatkozat ellenőrzése")	
+	@DisplayName("TC04 Adatkezelési nyilatkozat ellenőrzése")	
 	void successfulRegistrationTest	() {
 		RegistrationPage registrationPage=homePage.clickMyAccountButton()
 			 	 .clickContinueButton().clickPrivacyPolicyLink();		

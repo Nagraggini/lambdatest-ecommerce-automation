@@ -90,7 +90,7 @@ A megjelenő ablak címének ellenőrzése.
 
 Elvárt eredmény: A Privacy Policy tartalma olvashatóan megjelenik. 
 
-## TC05 Termékek listázásának ellenőrzése
+## TC05 Terméklista+validáció ellenőrzés 
 
 Teszt rövid leírása: A termékek listázásának ellenőrzése egy kiválasztott kategóriában.
 
@@ -98,31 +98,27 @@ Teszt lépések:
 
 Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
 A kategóriaválasztó menü megnyitása.
-A „Tablets” kategória kiválasztása.
+A „Phone, Tablets & Ipod” kategória kiválasztása.
 A terméklista betöltődésének megvárása.
 A termékkártyák megjelenésének ellenőrzése.
-Annak ellenőrzése, hogy minden termékkártyán megjelenik a termék neve és ára.
-Annak ellenőrzése, hogy legalább egy termék látható a listában.
+Annak ellenőrzése, hogy minden terméknek van ára.
+Annak ellenőrzése, hogy mind a 15 db termék látható a listában.
+Utána a fentieket további két kategórián is ellenőrizzük "Components" és "Cameras".
 
-Elvárt eredmény: A „Tablets” kategóriaoldal hiba nélkül betöltődik. A terméklista nem üres, és a termékek neve, ára, valamint az „Add to Cart” lehetőség megjelenik.
+Elvárt eredmény: A "Components", "Cameras" , "Phone, Tablets & Ipod",  kategóriaoldal hiba nélkül betöltődik.
+ A terméklisták nem üresek, és a termékek neve, és az áraik megjelennek.
 
-## TC06 Többoldalas terméklista bejárásának ellenőrzése
+## TC06 Egy vásárlási folyamat e2e tesztje
 
-Teszt rövid leírása: A több oldalból álló terméklista lapozási funkciójának ellenőrzése.
-
-Előfeltétel: A kiválasztott kategória több oldalnyi terméket tartalmaz.
+Teszt rövid leírása: Egy teljes vásárlási folyamat. 
 
 Teszt lépések:
 
 Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-A „Tablets” kategória megnyitása.
-A lapozó és az oldalak számát tartalmazó összesítő szöveg ellenőrzése.
-A második oldal megnyitása a „2” gombra kattintva.
-Annak ellenőrzése, hogy a második oldal aktívvá vált.
-Annak ellenőrzése, hogy a terméklista frissült.
-Továbblépés a következő oldalra a „>” gomb segítségével.
-Az utolsó oldal megnyitása a „>|” gomb segítségével.
-Az utolsó oldal terméklistájának ellenőrzése.
+Regisztráljunk az oldalra, majd jelentkezzünk be. 
+Válasszuk ki az "iMac" terméket. Ezután megjelenik a termék oldala.
+A "BUY NOW" gombra kattintás.
+
 
 Elvárt eredmény: Minden kiválasztott oldal megfelelően betöltődik. Az aktív oldalszám és az URL lapozási paramétere megváltozik. Minden megnyitott oldalon termékek jelennek meg, és az utolsó oldalról nem lehet továbblépni.
 

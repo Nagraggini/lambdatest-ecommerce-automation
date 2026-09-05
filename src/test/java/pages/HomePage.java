@@ -9,18 +9,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class HomePage extends BasePage{
 	
 	private final By myAccountButton=By.xpath("//a[@data-toggle='dropdown']//span[normalize-space()='My account'] ");
-	private final By loginButton=By.xpath("//span[normalize-space()='Login']");
+	//private final By loginButton=By.xpath("//span[normalize-space()='Login']");
 	private final By registrationButton=By.xpath("//span[normalize-space()='Register']");
-	private final By dummyWebsiteLabel=By.xpath("//strong[contains(text(), 'dummy')]");
+	//private final By dummyWebsiteLabel=By.xpath("//strong[contains(text(), 'dummy')]");
 	
-	private final By toptrendingcategoriesLabel=By.xpath("//h3[normalize-space()='Top Trending Categories']");
-
-	// Top Trending Categories
-	private final By tabletCategoryButton=By.xpath("//div//h4[normalize-space()='Tablets']");
+	//private final By topTrendingcategoriesLabel=By.xpath("//h3[normalize-space()='Top Trending Categories']");
+	
+	private final By shopByCategoryButton=
+			By.xpath("//div[@data-id='217833']//a[@aria-label='Shop by Category']");
+	
+	private final By phoneTabletIpodCategoryButton=
+			By.xpath("//span[normalize-space()='Phone, Tablets & Ipod']");
+	
 	
 	public HomePage(WebDriver driver) {
-		super(driver);		
-		
+		super(driver);			
 	}
 	
 	/**
@@ -49,11 +52,14 @@ public class HomePage extends BasePage{
 		return new RegistrationPage(driver);
 	}
 	
-	public CategoryPage clickTabletCategoryButton() {
-		click(tabletCategoryButton);
-		return new CategoryPage(driver);
+	public HomePage clickShopByCategoryButton() {
+		click(shopByCategoryButton);
+		return this;
 	}
 	
-	
+	public CategoryPage clickPhoneTabletIpodCategoryButton() {
+		click(phoneTabletIpodCategoryButton);
+		return new CategoryPage(driver);
+	}
 	
 }
