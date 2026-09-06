@@ -1,14 +1,12 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import base.BaseTest;
-import pages.AccountPage;
-import pages.AddressBookPage;
 import utils.AddressData;
 
 @Tag("ui")
@@ -41,7 +39,8 @@ class FullPurchaseWorkflowTest extends BaseTest  {
 			 .acceptPrivacyPolicy() 
 			 .clickContinue().clickAddressBookButton().clickNewAddress()
 			 .fillWithOutRegion(address)
-			.save().clickHome().clickFirstIMacProduct().clickBuyNow().clickAgreeTermsAndConditionsCheckbox()
+			.save().clickHome().clickFirstIMacProduct().clickBuyNow()
+			.clickInputPaymentAddressExisting().clickAgreeTermsAndConditionsCheckbox()
 		.clickContinue().clickConfirmOrder();
 		
 		assertEquals("Your order has been placed!",addressBookPage.getSuccessMessage()

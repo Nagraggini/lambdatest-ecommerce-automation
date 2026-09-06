@@ -5,7 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends BasePage {
 
-	private final By agreeTermsAndConditionsCheckbox = By.id("input-agree");
+	private final By inputPaymentAddressExisting = 
+			By.xpath("//label[@for='input-payment-address-existing']");
+	
+	private final By agreeTermsAndConditionsCheckbox = By.xpath("//label[@for='input-agree']");
 	private final By continueButton = By.id("button-save");
 
 	private final By confirmOrderButton = By.id("button-confirm");
@@ -21,7 +24,13 @@ public class CheckoutPage extends BasePage {
 
 	// A Billing Address rész, csak akkor jelenik meg, ha a profilban nem szerepel
 	// egy sem.
-
+	
+	
+	public CheckoutPage clickInputPaymentAddressExisting() {
+		click(inputPaymentAddressExisting);
+		return this;
+	}
+	
 	public CheckoutPage clickAgreeTermsAndConditionsCheckbox() {
 		click(agreeTermsAndConditionsCheckbox);
 		return this;

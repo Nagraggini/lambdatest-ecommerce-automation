@@ -2,14 +2,14 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
 
 	
 	private final By continueButton=By.xpath("//a[text()='Continue']");
 	
-	private final By newCustomerLabel=By.xpath("//h2[normalize-space()='New Customer']");
+	// házikó ikon / Account
+	private final By accountLabel=By.xpath("//li[@aria-current='page']");
 	
 	private final By emailInput=By.id("input-email");
 	private final By passwordInput=By.id("input-password");
@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO oldal betöltésének validálása validálás
-		waitUntilTextToBe(newCustomerLabel, "New Customer");
+		//waitUntilTextToBe(accountLabel, "Account");
 	}
 	
 	public RegistrationPage clickContinue() {

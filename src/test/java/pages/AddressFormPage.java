@@ -32,6 +32,13 @@ public class AddressFormPage extends BasePage {
 		// Megvárjuk, amíg a region legördülő lista ténylegesen feltöltődik opciókkal.
 		wait.until(d -> select(country).getOptions().size() > 1);
 		selectByValue(country, addressData.country());	
+
+	    // Kis várakozás, hogy a régiókezelés lefusson a háttérben.
+	    try {
+	        Thread.sleep(1000); 
+	    } catch (InterruptedException e) {
+	        Thread.currentThread().interrupt();
+	    }
 		return this;
 	}
 	

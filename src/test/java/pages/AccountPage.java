@@ -5,13 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountPage extends BasePage {
 
-	private final By pageTitle = By.cssSelector("h1.page-title");
 	private final By successfulLabel = By.cssSelector("[class='page-title my-3']");
 	private final By content=By.id("content");
 	
 	private final By addressBookButton = By.xpath("//a[normalize-space()='Address Book']");
 
-	// private final By myAccountLabel=By.cssSelector("#content h2");
 	private final By logoutLink = By.linkText("Logout");
 
 	public AccountPage(WebDriver driver) {
