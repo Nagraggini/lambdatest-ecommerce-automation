@@ -22,21 +22,26 @@ public class AddressFormPage extends BasePage {
 		waitUntilVisible(heading);
 	}
 
-	public AddressFormPage fill(AddressData value) {
-		type(firstName, value.firstName());
-		type(lastName, value.lastName());
-		type(company, value.company());
-		type(address, value.address());
-		type(city, value.city());
-		type(postCode, value.postCode());
-		selectByVisibleText(country, value.country());
-		
+	public AddressFormPage fillWithOutRegion(AddressData addressData) {
+		type(firstName, addressData.firstName());
+		type(lastName, addressData.lastName());
+		type(company, addressData.company());
+		type(address, addressData.address());
+		type(city, addressData.city());
+		type(postCode, addressData.postCode());
 		// Megvárjuk, amíg a region legördülő lista ténylegesen feltöltődik opciókkal.
-		wait.until(d -> select(region).getOptions().size() > 1);
-		selectByVisibleText(region, value.region());
+		wait.until(d -> select(country).getOptions().size() > 1);
+		selectByValue(country, addressData.country());	
 		return this;
 	}
+	
+	public AddressFormPage fillRegion(AddressData addressData) {
 
+		wait.until(d -> select(region).getOptions().size() > 1);
+		selectByValue(region, addressData.region());
+		return this;
+	}
+	
 	public AddressBookPage save() {
 		click(continueButton);
 		return new AddressBookPage(driver);

@@ -29,8 +29,8 @@ class FullPurchaseWorkflowTest extends BaseTest  {
 		        "Test Street 12",
 		        "Budapest",
 		        "1234",
-		        "Hungary",
-		        "--- None ---" //value="0"
+		        "97", // Hungary
+		        "0" // text="--- None ---"
 		);
 	var addressBookPage=homePage.clickMyAccount()
 			 	 .clickContinue()
@@ -40,7 +40,8 @@ class FullPurchaseWorkflowTest extends BaseTest  {
 					 testData.getTelephone(),  testData.getPassword())
 			 .acceptPrivacyPolicy() 
 			 .clickContinue().clickAddressBookButton().clickNewAddress()
-			 .fill(address).save().clickHome().clickFirstIMacProduct().clickBuyNow().clickAgreeTermsAndConditionsCheckbox()
+			 .fillWithOutRegion(address)
+			.save().clickHome().clickFirstIMacProduct().clickBuyNow().clickAgreeTermsAndConditionsCheckbox()
 		.clickContinue().clickConfirmOrder();
 		
 		assertEquals("Your order has been placed!",addressBookPage.getSuccessMessage()

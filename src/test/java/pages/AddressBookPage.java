@@ -35,7 +35,7 @@ public class AddressBookPage extends BasePage {
 
 	
 	public HomePage clickHome() {
-		click(newAddress);
+		click(homeButton);
 		return new HomePage(driver);
 	}	
 	

@@ -6,8 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class ProductPage extends BasePage {
 
 	private final By buyNowButton=
-			By.id("input-agree");
-	
+			By.xpath("//button[@title='Buy now']");	
 	
 	
 	public ProductPage(WebDriver driver) {

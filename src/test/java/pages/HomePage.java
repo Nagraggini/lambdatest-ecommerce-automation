@@ -23,7 +23,7 @@ public class HomePage extends BasePage{
 	
 	
 	private final By firstIMacProduct=
-			By.xpath("(//img[@title='iMac'])[2]");
+			By.xpath("(//a[@id='mz-product-listing-image-37218399-0-0'])[1]");
 	
 	public HomePage(WebDriver driver) {
 		super(driver);			
