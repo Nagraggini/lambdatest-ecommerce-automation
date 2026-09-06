@@ -16,6 +16,9 @@ public class CategoryPage extends BasePage{
 	
 	private final By productTitles=By.xpath("//div[@class='product-thumb']//h4[@class='title']//a");
 	
+	private final By homeButton=
+			By.xpath("//span[@class='title' and normalize-space()='Home']");
+	
 	private final By shopByCategoryButton=
 			By.xpath("//div[@data-id='217833']//a[@aria-label='Shop by Category']");
 	
@@ -86,4 +89,10 @@ public class CategoryPage extends BasePage{
 		click(camerasButton);
 		return this;
 	}
+	
+	public HomePage clickHomeButton() {
+		click(homeButton);
+		return new HomePage(driver);
+	}
+	
 }

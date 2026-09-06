@@ -1,7 +1,13 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage{
 	
@@ -11,9 +17,6 @@ public class HomePage extends BasePage{
 	//private final By dummyWebsiteLabel=By.xpath("//strong[contains(text(), 'dummy')]");
 	
 	//private final By topTrendingcategoriesLabel=By.xpath("//h3[normalize-space()='Top Trending Categories']");
-	
-	private final By shopByCategoryButton=
-			By.xpath("//div[@data-id='217833']//a[@aria-label='Shop by Category']");
 	
 	private final By phoneTabletIpodCategoryButton=
 			By.xpath("//span[normalize-space()='Phone, Tablets & Ipod']");
@@ -52,10 +55,10 @@ public class HomePage extends BasePage{
 		return new RegistrationPage(driver);
 	}
 	
-	public HomePage clickShopByCategory() {
-		click(shopByCategoryButton);
-		return this;
-	}
+	public CategoryPage openCategory(int categoryId) {
+		driver.get("https://ecommerce-playground.lambdatest.io/"+ "index.php?route=product/category&path=" + categoryId);
+        return new CategoryPage(driver);
+    }
 	
 	public CategoryPage clickPhoneTabletIpodCategory() {
 		click(phoneTabletIpodCategoryButton);

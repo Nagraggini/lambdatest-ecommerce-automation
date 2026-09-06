@@ -1,19 +1,14 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.LinkedHashMap;
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 
 import base.BaseTest;
-import pages.AccountPage;
 import pages.CategoryPage;
-import pages.RegistrationPage;
 
 @Tag("ui")
 @Tag("regression")
@@ -26,23 +21,20 @@ class ListAndTraverseProductsTest extends BaseTest  {
 	@Test
 	@DisplayName("TC05 Terméklista+validáció ellenőrzés ")	
 	void checkProductListTest() {
-		CategoryPage categoryPage=homePage.clickShopByCategory()
-				.clickPhoneTabletIpodCategory();		
-			
-		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
 		
+		// Components
+		CategoryPage categoryPage=homePage.openCategory(25);			
+		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
 		assertEquals(15, categoryPage.getAllItemnamesAndTheirPrices().size(),"Nem jelent meg mind a 15 db termék.");  		
 		
-		categoryPage.clickShopByCategoryButton().clickCamerasButton();		
+		// Cameras
+		categoryPage.clickHomeButton().openCategory(33);		
 		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
-		
 		assertEquals(15, categoryPage.getAllItemnamesAndTheirPrices().size(),"Nem jelent meg mind a 15 db termék.");  		
 		
 		
-		categoryPage.clickShopByCategoryButton().clickComponentsButton();
-		
+		categoryPage.clickHomeButton().openCategory(57);		
 		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
-		
 		assertEquals(15, categoryPage.getAllItemnamesAndTheirPrices().size(),"Nem jelent meg mind a 15 db termék.");  		
 	}
 
