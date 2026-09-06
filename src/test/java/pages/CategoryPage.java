@@ -18,15 +18,7 @@ public class CategoryPage extends BasePage{
 	
 	private final By homeButton=
 			By.xpath("//span[@class='title' and normalize-space()='Home']");
-	
-	private final By shopByCategoryButton=
-			By.xpath("//div[@data-id='217833']//a[@aria-label='Shop by Category']");
-	
-	private final By componentsButton=
-			By.xpath("//span[normalize-space()='Components']");
-	
-	private final By camerasButton=
-			By.xpath("//span[normalize-space()='Cameras']");
+		
 	
 	public CategoryPage(WebDriver driver) {
 		super(driver);
@@ -75,20 +67,6 @@ public class CategoryPage extends BasePage{
 		return itemsAndPrices;
 	}
 	
-	public CategoryPage clickShopByCategoryButton() {
-		click(shopByCategoryButton);
-		return this;
-	}
-	
-	public CategoryPage clickComponentsButton() {
-		click(componentsButton);
-		return this;
-	}
-	
-	public CategoryPage clickCamerasButton() {
-		click(camerasButton);
-		return this;
-	}
 	
 	public HomePage clickHomeButton() {
 		click(homeButton);
