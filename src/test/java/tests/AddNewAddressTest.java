@@ -63,12 +63,13 @@ Elvárt eredmény: Az új cím sikeresen létrejön. Az oldalon sikeres mentésr
 	
 	String [] fullAddressFromWebsite=addressBookPage.getLastAddress();
 	
-	assertEquals(fullAddressFromWebsite[0],address.firstName()+" "+address.lastName());
-	assertEquals(fullAddressFromWebsite[1],address.company());
-	assertEquals(fullAddressFromWebsite[2],address.address());
-	assertEquals(fullAddressFromWebsite[3],address.city()+" "+address.postCode());
-	assertEquals(fullAddressFromWebsite[4],"Hungary");
-
+	assertAll("Address Book adatainak ellenőrzése",
+			() -> assertEquals(address.firstName() + " " + address.lastName(), fullAddressFromWebsite[0]),
+			() -> assertEquals(address.company(), fullAddressFromWebsite[1]),
+			() -> assertEquals(address.address(), fullAddressFromWebsite[2]),
+			() -> assertEquals(address.city() + " " + address.postCode(), fullAddressFromWebsite[3]),
+			() -> assertEquals("Hungary", fullAddressFromWebsite[4])
+		);
 		// Kijelentkezés
 		addressBookPage.clickMyAccount()
 		.clickLogout();
