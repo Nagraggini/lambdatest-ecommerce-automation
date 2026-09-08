@@ -1,5 +1,6 @@
 package pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -21,9 +22,11 @@ public class AddressBookPage extends BasePage {
 	private final By lastAddress=By.xpath(
 			"//table[@class='table table-bordered table-hover']//tr[last()]//td[@class='text-left p-3']");
 	
+	private final By allAddress=By.xpath(
+			"//table[@class='table table-bordered table-hover']//tr//td[@class='text-left p-3']");
+	
 	private final By myAccountButton=By.xpath(
 			"//a[@data-toggle='dropdown']//span[normalize-space()='My account'] ");
-	
 	
 	public AddressBookPage(WebDriver driver) {
 		super(driver);
@@ -37,7 +40,8 @@ public class AddressBookPage extends BasePage {
 
 	/* Megjelenő üzenetek.
 	Új cím hozzáadása esetén: Your address has been successfully added
-	Régi cím módosítása esetén: Your address has been successfully updated*/
+	Régi cím módosítása esetén: Your address has been successfully updated
+	Cím törlése esetén: Your address has been successfully deleted*/
 	public String getSuccessMessage() {
 		return getText(success);				
 	}
@@ -52,12 +56,12 @@ public class AddressBookPage extends BasePage {
 		return new HomePage(driver);
 	}	
 	
-	public HomePage clickAllDeletes() {
+	public AddressBookPage clickAllDeletes() {
 		List<WebElement> deleteButtonList=findAll(deleteButton);
 		for (WebElement deleteButton : deleteButtonList) {
 			deleteButton.click();
 		}		
-		return new HomePage(driver);
+		return this;
 	}
 	
 	public LoginPage clickMyAccount() {
@@ -74,6 +78,43 @@ public class AddressBookPage extends BasePage {
 		return new AddressFormPage(driver);
 	}	
 
+	// pl.: John Smith Az első ilyen nevű címnél kattintunk a szerkesztés gombra.
+	public AddressBookPage clickDeleteSpecificAddress(String firstNameAndLastName) {				
+			click(By.xpath("(//td[@class='text-left p-3' and starts-with(text(), '"
+					+ firstNameAndLastName
+					+ "')])[1]/following::td[1]//a[normalize-space()='Delete']"
+					));
+			return this;
+		}	
+		
+	public List<AddressData> getAllAddress() {	
+	    List<AddressData> addresses = new ArrayList<>();
+	    List<WebElement> allAddressList = findAll(allAddress);
+
+	    for (WebElement oneAddress : allAddressList) {
+	        String[] addressLines = oneAddress.getText().split("\n");
+	        
+	        String fullName = addressLines[0];
+	        int lastSpaceIndex = fullName.lastIndexOf(' ');
+	        
+	        // Ha van szóköz a névben, szétvágjuk, különben az egészet a vezetéknévhez tesszük.
+	        String firstName = (lastSpaceIndex != -1) ? fullName.substring(0, lastSpaceIndex) : fullName;
+	        String lastName = (lastSpaceIndex != -1) ? fullName.substring(lastSpaceIndex + 1) : "";
+
+	        addresses.add(new AddressData(
+	            firstName,
+	            lastName,
+	            addressLines[1], // company
+	            addressLines[2], // address
+	            addressLines[3], // city
+	            addressLines[4], // postCode
+	            addressLines[5], // country
+	            addressLines[6]  // region/state 
+	        ));
+	    }
+
+	    return addresses;
+	}
 	
 	
 }
