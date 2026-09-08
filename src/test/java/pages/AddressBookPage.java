@@ -24,6 +24,7 @@ public class AddressBookPage extends BasePage {
 	private final By myAccountButton=By.xpath(
 			"//a[@data-toggle='dropdown']//span[normalize-space()='My account'] ");
 	
+	
 	public AddressBookPage(WebDriver driver) {
 		super(driver);
 		waitUntilVisible(heading);
@@ -34,7 +35,9 @@ public class AddressBookPage extends BasePage {
 		return new AddressFormPage(driver);
 	}	
 
-	// Megjelenő üzenet: Your address has been successfully added
+	/* Megjelenő üzenetek.
+	Új cím hozzáadása esetén: Your address has been successfully added
+	Régi cím módosítása esetén: Your address has been successfully updated*/
 	public String getSuccessMessage() {
 		return getText(success);				
 	}
@@ -61,5 +64,16 @@ public class AddressBookPage extends BasePage {
 		click(myAccountButton);
 		return new LoginPage(driver);
 	}
+	
+	// pl.: John Smith Az első ilyen nevű címnél kattintunk a szerkesztés gombra.
+	public AddressFormPage clickEditSpecificAddress(String firstNameAndLastName) {				
+		click(By.xpath("(//td[@class='text-left p-3' and starts-with(text(), '"
+				+ firstNameAndLastName
+				+ "')])[1]/following::td[1]//a[normalize-space()='Edit']"
+				));
+		return new AddressFormPage(driver);
+	}	
+
+	
 	
 }

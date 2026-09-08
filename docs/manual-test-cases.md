@@ -126,12 +126,10 @@ Elvárt eredmény: Minden kiválasztott oldal megfelelően betöltődik. Az akt�
 
 Teszt rövid leírása: Új cím sikeres hozzáadása a felhasználó címjegyzékéhez.
 
-Előfeltétel: A felhasználó be van jelentkezve.
-
 Teszt lépések:
 
 Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-Bejelentkezés érvényes felhasználói adatokkal.
+Regisztráció érvényes felhasználói adatokkal.
 My Account → Address Book megnyitása.
 Kattintás a „New Address” gombra.
 A First Name és Last Name mezők kitöltése.
@@ -180,24 +178,20 @@ Elvárt eredmény: A rendszer a CSV-fájlban szereplő összes címet sikeresen 
 
 Teszt rövid leírása: Egy korábban létrehozott cím adatainak módosítása.
 
-Előfeltétel:
-
-A felhasználó be van jelentkezve.
-Legalább egy módosítható tesztcím szerepel a címjegyzékben.
-
 Teszt lépések:
-
 Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-Bejelentkezés érvényes felhasználói adatokkal.
+Regisztráció érvényes felhasználói adatokkal.
 My Account → Address Book megnyitása.
 A módosítandó tesztcím megkeresése.
 Kattintás a címhez tartozó „Edit” gombra.
-A City mező értékének módosítása.
-A Post Code mező értékének módosítása.
+A First Name mező értékének módosítása.
+A Last Name mező értékének módosítása.
 Kattintás a „Continue” gombra.
 A módosított cím megkeresése az Address Book Entries listában.
 
-Elvárt eredmény: A cím módosítása sikeres. Az oldalon sikeres mentésről szóló üzenet jelenik meg. A címjegyzékben már az új City és Post Code értékek láthatók, a korábbi értékek pedig nem jelennek meg.
+Elvárt eredmény: A cím módosítása sikeres. Az oldalon sikeres mentésről szóló üzenet jelenik meg. 
+A címjegyzékben már az új First Name és Last Name  értékeik láthatóak, 
+a korábbi értékek pedig nem jelennek meg.
 
 ## TC10 Meglévő cím törlésének ellenőrzése
 
