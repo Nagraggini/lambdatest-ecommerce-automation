@@ -197,16 +197,10 @@ a korábbi értékek pedig nem jelennek meg.
 
 Teszt rövid leírása: Egy korábban létrehozott cím törlése a felhasználó címjegyzékéből.
 
-Előfeltétel:
-
-A felhasználó be van jelentkezve.
-A címjegyzék legalább két címet tartalmaz.
-A törlendő cím nem az egyetlen alapértelmezett cím.
-
 Teszt lépések:
 
 Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-Bejelentkezés érvényes felhasználói adatokkal.
+Regisztráció érvényes felhasználói adatokkal.
 My Account → Address Book megnyitása.
 A törlendő tesztcím megkeresése.
 A törlendő cím adatainak eltárolása az ellenőrzéshez.
