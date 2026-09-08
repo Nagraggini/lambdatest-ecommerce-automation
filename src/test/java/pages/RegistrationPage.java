@@ -51,7 +51,7 @@ public class RegistrationPage extends BasePage{
 		return new RegistrationPage(driver);
 	}
 	
-	// Privacy Policy
+	// Megjelenő üzenet: Privacy Policy
 	public String getPrivacyPolicyHeaderText() {
 		return getText(privacyPolicyWindowHeader);
 	}
@@ -66,7 +66,7 @@ public class RegistrationPage extends BasePage{
 		return this;
 	}
 	
-	// Warning: You must agree to the Privacy Policy!
+	// Megjelenő üzenet: Warning: You must agree to the Privacy Policy!
 	public String getwarningYouMustAgreeToThePrivacyPolicyMessage() {
 		return getText(warningYouMustAgreeToThePrivacyPolicyLabel);
 	}

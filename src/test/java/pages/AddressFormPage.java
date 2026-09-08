@@ -29,6 +29,7 @@ public class AddressFormPage extends BasePage {
 		type(address, addressData.address());
 		type(city, addressData.city());
 		type(postCode, addressData.postCode());
+		
 		// Megvárjuk, amíg a region legördülő lista ténylegesen feltöltődik opciókkal.
 		wait.until(d -> select(country).getOptions().size() > 1);
 		selectByValue(country, addressData.country());	

@@ -46,7 +46,7 @@ public class CheckoutPage extends BasePage {
 		return this;
 	}
 	
-	// Your order has been placed!
+	// Megjelenő üzenet: Your order has been placed!
 	public String getSuccessMessage() {
 		return getText(successfulMessage);
 	}

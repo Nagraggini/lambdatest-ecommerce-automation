@@ -17,7 +17,7 @@ public class AccountPage extends BasePage {
 		waitUntilVisible(content);
 	}
 
-	// Your Account Has Been Created!
+	// Megjelenő üzenet: Your Account Has Been Created!
 	public String getSuccessfulAccountCreatedMessage() {
 		return getText(successfulLabel);
 	}
