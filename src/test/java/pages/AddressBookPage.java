@@ -95,21 +95,31 @@ public class AddressBookPage extends BasePage {
 	        String[] addressLines = oneAddress.getText().split("\n");
 	        
 	        String fullName = addressLines[0];
+	        // Az utolsó szóköz megkeresése, ha nincs benne, akkor -1 lesz az értéke.
 	        int lastSpaceIndex = fullName.lastIndexOf(' ');
 	        
 	        // Ha van szóköz a névben, szétvágjuk, különben az egészet a vezetéknévhez tesszük.
 	        String firstName = (lastSpaceIndex != -1) ? fullName.substring(0, lastSpaceIndex) : fullName;
+	        // Az oldal nem enged menteni üres mezővel.
 	        String lastName = (lastSpaceIndex != -1) ? fullName.substring(lastSpaceIndex + 1) : "";
+	        
+	        
+	        String cityAndPostalCode = addressLines[3];
+	        lastSpaceIndex = cityAndPostalCode.lastIndexOf(' ');
+	        
+	        String city=(lastSpaceIndex != -1) ? cityAndPostalCode.substring(0, lastSpaceIndex) : cityAndPostalCode;
+	        // Az oldal nem enged menteni üres mezővel.
+	        String postalCode= (lastSpaceIndex != -1) ? cityAndPostalCode.substring(lastSpaceIndex + 1) : "";
 
 	        addresses.add(new AddressData(
 	            firstName,
 	            lastName,
 	            addressLines[1], // company
 	            addressLines[2], // address
-	            addressLines[3], // city
-	            addressLines[4], // postCode
-	            addressLines[5], // country
-	            addressLines[6]  // region/state 
+	            city, 			 // city
+	            postalCode,		 // postCode
+	            addressLines[4], // country
+	            ""  // region/state 
 	        ));
 	    }
 
