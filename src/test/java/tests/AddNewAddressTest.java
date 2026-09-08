@@ -15,24 +15,6 @@ class AddNewAddressTest extends BaseTest{
 
 	/**
 	 * TC07 Új cím hozzáadásának ellenőrzése
-
-Teszt rövid leírása: Új cím sikeres hozzáadása a felhasználó címjegyzékéhez.
-
-Teszt lépések:
-
-Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-Regisztráció érvényes felhasználói adatokkal.
-My Account → Address Book megnyitása.
-Kattintás a „New Address” gombra.
-A First Name és Last Name mezők kitöltése.
-A Company mező kitöltése, amennyiben szükséges.
-Az Address 1, City és Post Code mezők kitöltése.
-A Country és Region/State értékek kiválasztása.
-A „Default Address” beállításnál a „No” lehetőség kiválasztása.
-Kattintás a „Continue” gombra.
-
-Elvárt eredmény: Az új cím sikeresen létrejön. Az oldalon sikeres mentésről szóló üzenet jelenik meg, 
-és az új cím látható az Address Book Entries listában.
 	 */
 	@Test
 	@DisplayName("TC07 Új cím hozzáadásának ellenőrzése")
