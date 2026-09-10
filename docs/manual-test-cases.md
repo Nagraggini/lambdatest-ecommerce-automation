@@ -143,36 +143,37 @@ Elvárt eredmény: Az új cím sikeresen létrejön. Az oldalon sikeres mentésr
 
 ## TC08 Ismételt és sorozatos címbevitel adatforrásból
 
-Teszt rövid leírása: Több cím egymás utáni rögzítése külső CSV-adatforrásból beolvasott adatok alapján.
+Teszt rövid leírása: Több felhasználó egymás utáni regisztrációjának ellenőrzése külső CSV-adatforrásból beolvasott adatok alapján.
 
 Előfeltétel:
 
-A felhasználó be van jelentkezve.
-A data/addresses.csv fájl legalább három érvényes, egymástól eltérő címet tartalmaz.
+A data/users.csv fájl legalább három érvényes, egymástól eltérő email címet tartalmaz.
+A CSV-fájlban szereplő email címek még nincsenek regisztrálva.
 
 Teszt lépések:
 
 Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-Bejelentkezés érvényes felhasználói adatokkal.
-A címadatok beolvasása a data/addresses.csv fájlból.
-Annak ellenőrzése, hogy az adatforrás nem üres.
-My Account → Address Book megnyitása.
-Kattintás a „New Address” gombra.
-A címűrlap kitöltése az aktuális CSV-adatsor értékeivel:
+A regisztrációs adatok beolvasása a data/users.csv fájlból.
+Annak ellenőrzése, hogy a fájl nem üres.
+A „My Account” menü megnyitása.
+Kattintás a „Register” gombra.
+A regisztrációs űrlap kitöltése az aktuális CSV-adatsor értékeivel:
 First Name
 Last Name
-Company
-Address 1
-City
-Post Code
-Country
-Region/State
+E-Mail
+Telephone
+Password
+Password Confirm
+Az adatvédelmi feltételek elfogadása.
 Kattintás a „Continue” gombra.
-A sikeres mentésről szóló üzenet ellenőrzése.
-Annak ellenőrzése, hogy a létrehozott cím megjelent az Address Book Entries listában.
+A sikeres regisztrációról szóló üzenet ellenőrzése.
+A regisztrációból való kilépés / kijelentkezés.
 A folyamat megismétlése a CSV-fájl összes adatsorával.
 
-Elvárt eredmény: A rendszer a CSV-fájlban szereplő összes címet sikeresen rögzíti. Minden adatforrásbeli sorhoz pontosan egy cím jön létre, és a felületen megjelenő adatok megegyeznek a CSV-fájl adataival.
+Elvárt eredmény: 
+A rendszer a CSV-fájlban szereplő összes felhasználót sikeresen regisztrálja. 
+Minden adatforrásbeli sorhoz pontosan egy felhasználói fiók jön létre, 
+és a regisztráció során megadott adatok megfelelnek a CSV-fájl aktuális sorának.
 
 ## TC09 Meglévő cím módosításának ellenőrzése
 

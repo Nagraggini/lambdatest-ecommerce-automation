@@ -42,12 +42,12 @@ public class TestData {
     public static String generateEmail() {
         String allCharacters = UPPERCASE + LOWERCASE + NUMBERS;
 
-        // Kötelező karakterek + maradék a 8 karakterhez (4 karakter generálása)
+        // Egyedi emailcím generálása.
         StringBuilder emailBuilder = new StringBuilder();
         emailBuilder.append(UPPERCASE.charAt(random.nextInt(UPPERCASE.length())));
         emailBuilder.append(LOWERCASE.charAt(random.nextInt(LOWERCASE.length())));
         emailBuilder.append(NUMBERS.charAt(random.nextInt(NUMBERS.length())));
-        emailBuilder.append(generateRandomString(allCharacters, 4));
+        emailBuilder.append(generateRandomString(allCharacters, 8));
 
         return "test" + System.currentTimeMillis() + emailBuilder.toString() + "@test.com";
     }
