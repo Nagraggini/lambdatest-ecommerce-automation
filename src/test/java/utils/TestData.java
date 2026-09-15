@@ -42,26 +42,28 @@ public class TestData {
     public static String generateEmail() {
         String allCharacters = UPPERCASE + LOWERCASE + NUMBERS;
 
-        // Kötelező karakterek + maradék a 8 karakterhez (4 karakter generálása)
+        // Egyedi emailcím generálása.
         StringBuilder emailBuilder = new StringBuilder();
         emailBuilder.append(UPPERCASE.charAt(random.nextInt(UPPERCASE.length())));
         emailBuilder.append(LOWERCASE.charAt(random.nextInt(LOWERCASE.length())));
         emailBuilder.append(NUMBERS.charAt(random.nextInt(NUMBERS.length())));
-        emailBuilder.append(generateRandomString(allCharacters, 4));
+        emailBuilder.append(generateRandomString(allCharacters, 8));
 
         return "test" + System.currentTimeMillis() + emailBuilder.toString() + "@test.com";
     }
 
     private String generateRandomPassword() {
         String allCharacters = UPPERCASE + LOWERCASE + NUMBERS + SPECIAL;
-
-        // Kötelező karakterek + maradék a 8 karakterhez 
+       
         StringBuilder passwordBuilder = new StringBuilder();
+        
         // 4 karakter generálása
         passwordBuilder.append(UPPERCASE.charAt(random.nextInt(UPPERCASE.length())));
         passwordBuilder.append(LOWERCASE.charAt(random.nextInt(LOWERCASE.length())));
         passwordBuilder.append(NUMBERS.charAt(random.nextInt(NUMBERS.length())));
         passwordBuilder.append(SPECIAL.charAt(random.nextInt(SPECIAL.length())));
+        
+     // 4 karakter generálása
         passwordBuilder.append(generateRandomString(allCharacters, 4));
 
         return passwordBuilder.toString();

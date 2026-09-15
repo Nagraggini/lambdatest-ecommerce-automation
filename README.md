@@ -1,9 +1,10 @@
 # vizsgaremek-fa-260117-2
 
-
 **Készítette:** Freud Andrea
 
 **Tesztelt webalkalmazás:**  [LambdaTest E-Commerce Playground](https://ecommerce-playground.lambdatest.io/)
+
+**Teszt környezet:** Chrome böngésző; 1920×1080; internet hozzáférés
 
 Futtatás:
 linux-on és macOS-en: `./mvnw clean test`

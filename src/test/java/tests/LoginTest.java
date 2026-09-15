@@ -1,0 +1,28 @@
+package tests;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+import base.BaseTest;
+import pages.LoginPage;
+
+@Tag("ui")
+@Tag("regression")
+class LoginTest extends BaseTest {
+
+	/**
+	 * TC03 Sikertelen bejelentkezés hibás jelszóval
+	 */
+	@Test
+	@DisplayName("TC03 Sikertelen bejelentkezés hibás jelszóval")
+	void unsuccessfulLoginTest() {
+		LoginPage loginPage = homePage.clickMyAccount()
+				.fillEmailAndPasswordFields(testData.getEmail(), testData.getPassword())
+				.clickLoginButtonAndNotGoToAccountPage();
+
+		assertEquals("Warning: No match for E-Mail Address and/or Password.", loginPage.getwarningLabelMessage());
+	}
+
+}

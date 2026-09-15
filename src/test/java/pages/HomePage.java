@@ -2,18 +2,32 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage{
 	
-	private final By myAccountButton=By.xpath("//span[normalize-space()='My account']");
-	private final By dummyWebsiteLabel=By.xpath("//strong[contains(text(), 'dummy')]");
-
-	public HomePage(WebDriver driver) {
-		super(driver);
+	private final By myAccountButton=By.xpath("//a[@data-toggle='dropdown']//span[normalize-space()='My account'] ");
 	
-		/*wait.until(ExpectedConditions.textToBe
-				(dummyWebsiteLabel, "This is a dummy website for Web Automation Testing"));*/
+	private final By registrationButton=By.xpath("//span[normalize-space()='Register']");
+	
+	private final By phoneTabletIpodCategoryButton=
+			By.xpath("//span[normalize-space()='Phone, Tablets & Ipod']");
+	
+	
+	private final By firstIMacProduct=
+			By.xpath("(//a[@id='mz-product-listing-image-37218399-0-0'])[1]");
+	
+	
+	private final By HTCTouchHDProduct=
+			By.xpath("(//h4[@class='title']/a[normalize-space()='HTC Touch HD'])[1]");
+		
+	private final By cartButton=
+			By.xpath("(//a[@href='#cart-total-drawer'])[2]");			
+	
+	private final By editCartButton=
+			By.xpath("//a[normalize-space()=\"Edit cart\"]");	
+	
+	public HomePage(WebDriver driver) {
+		super(driver);			
 	}
 	
 	/**
@@ -31,10 +45,46 @@ public class HomePage extends BasePage{
 		return this;
 	}
 
-	public HomePage clickMyAccountButton() {
+	public LoginPage clickMyAccount() {
 		click(myAccountButton);
-		return new HomePage(driver);
+		return new LoginPage(driver);
 	}
 	
+		
+	public RegistrationPage clickRegistration() {
+		click(registrationButton);
+		return new RegistrationPage(driver);
+	}
+	
+	public CategoryPage openCategory(int categoryId) {
+		driver.get("https://ecommerce-playground.lambdatest.io/"+ "index.php?route=product/category&path=" + categoryId);
+        return new CategoryPage(driver);
+    }
+	
+	public CategoryPage clickPhoneTabletIpodCategory() {
+		click(phoneTabletIpodCategoryButton);
+		return new CategoryPage(driver);
+	}
+	
+	
+	public ProductPage clickFirstIMacProduct() {
+		click(firstIMacProduct);
+		return new ProductPage(driver);
+	}
+	
+	public ProductPage clickHTCTouchHDProduct() {
+		click(HTCTouchHDProduct);
+		return new ProductPage(driver);
+	}
+	
+	public HomePage clickCart() {
+		click(cartButton);
+		return this;
+	}
+		
+	public CartPage clickEditCart() {
+		click(editCartButton);
+		return new CartPage(driver);
+	}
 	
 }

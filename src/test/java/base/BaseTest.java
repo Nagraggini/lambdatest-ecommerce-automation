@@ -14,10 +14,14 @@ import driver.DriverFactory;
 import pages.HomePage;
 import utils.TestData;
 
-
 public class BaseTest {
 
 	protected WebDriver driver;
+
+	// A target/screenshoot mappában lesz.
+	@RegisterExtension
+	final FailureScreenshotExtension failureScreenshot = new FailureScreenshotExtension(() -> driver);
+
 	// 20 másodperces várakoztatás deklarálása.
 	protected WebDriverWait wait;
 
@@ -26,31 +30,29 @@ public class BaseTest {
 
 	protected HomePage homePage;
 	protected TestData testData;
-	
+
 	@BeforeEach
-	void setUp(org.junit.jupiter.api.TestInfo testInfo) {		
+	void setUp(org.junit.jupiter.api.TestInfo testInfo) {
 		driver = DriverFactory.createDriver(System.getProperty("CI") != null); // headless CI-ben
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		
+
 		// Kiírjuk a logba az induló teszt nevét.
-        logger.info("//==================================================");
-        logger.info(" TESZT NEVE: " + testInfo.getDisplayName());
-        logger.info("//==================================================");
-        
-        homePage = new HomePage(driver);
+		logger.info("//==================================================");
+		logger.info(" TESZT NEVE: " + testInfo.getDisplayName());
+		logger.info("//==================================================");
+
+		homePage = new HomePage(driver);
 		homePage.open();
-		testData=new TestData();
+		testData = new TestData();
 	}
 
-	
 	@AfterEach
 	void tearDown(org.junit.jupiter.api.TestInfo testInfo) {
 		// Kiírjuk a logba az induló teszt nevét.
-		  logger.info("//==================================================");
-	      logger.info(" 		TESZT VÉGE");
-	      logger.info("//==================================================");
-	        
-	        
+		logger.info("//==================================================");
+		logger.info(" 		TESZT VÉGE");
+		logger.info("//==================================================");
+
 		// Bezárja az összes ablakot és teljesen leállítja a WebDriver-t.
 		if (driver != null) {
 			driver.quit();
