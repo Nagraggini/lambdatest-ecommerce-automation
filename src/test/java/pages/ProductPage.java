@@ -22,7 +22,7 @@ public class ProductPage extends BasePage {
 	
 	public ProductPage(WebDriver driver) {
 		super(driver);
-		// TODO oldal betöltésének validálása validálás
+		waitUntilVisible(buyNowButton);
 	}
 	
 	public ProductPage setQuatity(String pc) {

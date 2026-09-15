@@ -22,7 +22,7 @@ public class CheckoutPage extends BasePage {
 	
 	public CheckoutPage(WebDriver driver) {
 		super(driver);
-		// TODO oldal betöltésének validálása validálás
+		waitUntilVisible(continueButton);
 	}
 
 	// A Billing Address rész, csak akkor jelenik meg, ha a profilban nem szerepel

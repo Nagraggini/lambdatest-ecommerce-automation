@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class CategoryPage extends BasePage{
 	
-	private final By descriptionParagraph=By.xpath("//div[@class='description']/p");
+	private final By descriptionParagraph = By.cssSelector(".description p");
 	
 	private final By inventoryItemCards=By.cssSelector("[class='product-thumb']");
 	
@@ -22,9 +22,7 @@ public class CategoryPage extends BasePage{
 	
 	public CategoryPage(WebDriver driver) {
 		super(driver);
-		// TODO oldal betöltésének validálása validálás
-		// TODO Ez nem annyira jó.
-		waitUntilTextToBe(descriptionParagraph, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper auctor neque vitae tempus quam pellentesque. Facilisis leo vel fringilla est ullamcorper. Tellus id interdum velit laoreet id donec ultrices tincidunt. Vitae nunc sed velit dignissim sodales. Mi proin sed libero enim sed. Mi quis hendrerit dolor magna eget est lorem ipsum.");
+		waitUntilVisible(descriptionParagraph);
 	}
 
 	public List<WebElement> getInventoryItemCards() {

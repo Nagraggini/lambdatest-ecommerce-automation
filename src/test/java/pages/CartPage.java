@@ -11,11 +11,12 @@ import utils.ShoppingCart;
 
 public class CartPage extends BasePage {
 	
+	private final By heading = By.cssSelector("#content h1");
 	final private By allQuantityInputs=By.xpath("//tbody//input");
 
 	public CartPage(WebDriver driver) {
 		super(driver);
-		// TODO oldal betöltésének validálása validálás
+		waitUntilVisible(heading);
 	}
 
 	public double getSpecificProductUnitPrice(String productName) {

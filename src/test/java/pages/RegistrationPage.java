@@ -28,7 +28,7 @@ public class RegistrationPage extends BasePage{
 
 	public RegistrationPage(WebDriver driver) {
 		super(driver);
-		// TODO oldal betöltésének validálása validálás waitUntilTextToBe(.. , ..)
+		waitUntilVisible(firstNameField);
 	}
 
 	public RegistrationPage fillRegistrationForm(String firstName, String lastName, String email, String phone, String password) {
