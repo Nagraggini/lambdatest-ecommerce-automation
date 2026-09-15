@@ -6,11 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends BasePage{
 	
 	private final By myAccountButton=By.xpath("//a[@data-toggle='dropdown']//span[normalize-space()='My account'] ");
-	//private final By loginButton=By.xpath("//span[normalize-space()='Login']");
-	private final By registrationButton=By.xpath("//span[normalize-space()='Register']");
-	//private final By dummyWebsiteLabel=By.xpath("//strong[contains(text(), 'dummy')]");
 	
-	//private final By topTrendingcategoriesLabel=By.xpath("//h3[normalize-space()='Top Trending Categories']");
+	private final By registrationButton=By.xpath("//span[normalize-space()='Register']");
 	
 	private final By phoneTabletIpodCategoryButton=
 			By.xpath("//span[normalize-space()='Phone, Tablets & Ipod']");
@@ -18,6 +15,16 @@ public class HomePage extends BasePage{
 	
 	private final By firstIMacProduct=
 			By.xpath("(//a[@id='mz-product-listing-image-37218399-0-0'])[1]");
+	
+	
+	private final By HTCTouchHDProduct=
+			By.xpath("(//h4[@class='title']/a[normalize-space()='HTC Touch HD'])[1]");
+		
+	private final By cartButton=
+			By.xpath("(//a[@href='#cart-total-drawer'])[2]");			
+	
+	private final By editCartButton=
+			By.xpath("//a[normalize-space()=\"Edit cart\"]");	
 	
 	public HomePage(WebDriver driver) {
 		super(driver);			
@@ -65,5 +72,19 @@ public class HomePage extends BasePage{
 		return new ProductPage(driver);
 	}
 	
+	public ProductPage clickHTCTouchHDProduct() {
+		click(HTCTouchHDProduct);
+		return new ProductPage(driver);
+	}
+	
+	public HomePage clickCart() {
+		click(cartButton);
+		return this;
+	}
+		
+	public CartPage clickEditCart() {
+		click(editCartButton);
+		return new CartPage(driver);
+	}
 	
 }

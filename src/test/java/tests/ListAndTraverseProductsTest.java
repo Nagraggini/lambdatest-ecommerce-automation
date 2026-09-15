@@ -28,12 +28,12 @@ class ListAndTraverseProductsTest extends BaseTest  {
 		assertEquals(15, categoryPage.getAllItemnamesAndTheirPrices().size(),"Nem jelent meg mind a 15 db termék.");  		
 		
 		// Cameras
-		categoryPage.clickHomeButton().openCategory(33);		
+		categoryPage.clickHome().openCategory(33);		
 		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
 		assertEquals(15, categoryPage.getAllItemnamesAndTheirPrices().size(),"Nem jelent meg mind a 15 db termék.");  		
 		
 		
-		categoryPage.clickHomeButton().openCategory(57);		
+		categoryPage.clickHome().openCategory(57);		
 		assertTrue(categoryPage.getInventoryItemCards().size()>0,"A termék kártyák nem jelentek meg.");
 		assertEquals(15, categoryPage.getAllItemnamesAndTheirPrices().size(),"Nem jelent meg mind a 15 db termék.");  		
 	}
