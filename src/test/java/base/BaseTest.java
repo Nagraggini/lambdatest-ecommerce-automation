@@ -16,8 +16,12 @@ import utils.TestData;
 
 
 public class BaseTest {
+	
+	protected WebDriver driver;	
 
-	protected WebDriver driver;
+	@RegisterExtension
+	final FailureScreenshotExtension failureScreenshot = new FailureScreenshotExtension(() -> driver);
+	
 	// 20 másodperces várakoztatás deklarálása.
 	protected WebDriverWait wait;
 
