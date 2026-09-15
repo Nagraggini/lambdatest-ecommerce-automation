@@ -17,6 +17,9 @@ public class CheckoutPage extends BasePage {
 
 	private final By continueAfterOrderButton = By.xpath("//a[normalize-space()='Continue']");
 	
+	private final By homeButton=
+			By.xpath("//span[@class='title' and normalize-space()='Home']");
+	
 	public CheckoutPage(WebDriver driver) {
 		super(driver);
 		// TODO oldal betöltésének validálása validálás
@@ -55,4 +58,10 @@ public class CheckoutPage extends BasePage {
 		click(continueAfterOrderButton);
 		return new HomePage(driver);
 	}
+		
+	public HomePage clickHome() {
+		click(homeButton);
+		return new HomePage(driver);
+	}
+	
 }

@@ -65,10 +65,9 @@ public class CategoryPage extends BasePage{
 		}
 
 		return itemsAndPrices;
-	}
+	}	
 	
-	
-	public HomePage clickHomeButton() {
+	public HomePage clickHome() {
 		click(homeButton);
 		return new HomePage(driver);
 	}

@@ -17,8 +17,8 @@ Adatok listázása									TC05
 Több oldalas lista bejárása							TC06
 Új adat bevitel										TC07
 Ismételt és sorozatos adatbevitel adatforrásból		TC08
-Meglévő adat módosítás								TC09, TC12
-Adat vagy adatok törlése							TC10, TC12
+Meglévő adat módosítás								TC09
+Adat vagy adatok törlése							TC10
 Adatok lementése felületről							TC11
 Kijelentkezés										TC01
 
@@ -211,53 +211,6 @@ A címjegyzék ismételt ellenőrzése.
 
 Elvárt eredmény: A kiválasztott cím sikeresen törlődik. A törölt cím már nem jelenik meg az Address Book Entries listában, a többi cím pedig változatlanul megmarad.
 
-## TC11 Termékadatok lementésének ellenőrzése
-
-Teszt rövid leírása: A terméklista adatainak összegyűjtése a felületről és CSV-fájlba történő mentése.
-
-Előfeltétel:
-
-A „Tablets” kategória elérhető.
-A kimeneti mappa írható.
-
-Teszt lépések:
-
-Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-A „Tablets” kategória megnyitása.
-A terméklista betöltődésének megvárása.
-Az aktuális oldalon látható terméknevek összegyűjtése.
-A termékekhez tartozó árak összegyűjtése.
-A terméknevek és árak mentése az output/products.csv fájlba.
-A létrehozott CSV-fájl visszaolvasása.
-A fájl fejlécének ellenőrzése.
-A mentett adatsorok számának összehasonlítása a felületről összegyűjtött termékek számával.
-Az első és az utolsó mentett termék adatainak összehasonlítása a felületen megjelenő adatokkal.
-
-Elvárt eredmény: Az output/products.csv fájl sikeresen létrejön. A fájl tartalmazza a name és price fejlécet. Az adatsorok száma megegyezik a felületről összegyűjtött termékek számával, és a mentett terméknevek és árak helyesek.
-
-## TC12 Kosárban lévő termék módosításának és törlésének ellenőrzése
-
-Teszt rövid leírása: Egy termék kosárba helyezése, mennyiségének módosítása, majd a termék törlése.
-
-Előfeltétel: A kiválasztott termék elérhető és kosárba helyezhető.
-
-Teszt lépések:
-
-Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-A „Tablets” kategória megnyitása.
-Egy elérhető termék kiválasztása.
-Kattintás az „Add to Cart” gombra.
-A kosár megnyitása.
-Kattintás az „Edit Cart” lehetőségre.
-Annak ellenőrzése, hogy a kiválasztott termék megjelent a kosárban.
-A termék kezdeti mennyiségének ellenőrzése.
-A Quantity mező értékének módosítása 2 értékre.
-Kattintás az „Update” gombra.
-A mennyiség és a részösszeg frissülésének ellenőrzése.
-Kattintás a termékhez tartozó „Remove” gombra.
-A kosár tartalmának ellenőrzése.
-
-Elvárt eredmény: A termék sikeresen bekerül a kosárba. A mennyiség módosítása után a kosárban 2 darab jelenik meg, és a részösszeg megfelelően frissül. A törlés után a termék eltűnik, és a kosár üres állapotot jelez.
-
+## TC11 Kosár tartalmának lementése
 
 
