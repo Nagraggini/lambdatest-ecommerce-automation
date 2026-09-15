@@ -6,8 +6,7 @@ A menedzsment számára a jelentés a `management-test-report.xlsx` fájlban van
 
 A `manual-test-cases.md` fájlban található a részletes dokumentáció minden automata teszthez.
 
-A `requirement-table.xls` fájlban található a táblázat, hogy melyik teszt melyik vizsga követelményt fedi le.
-
+A `requirement-table.xlsx` fájlban található a táblázat, hogy melyik teszt melyik vizsgakövetelményt fedi le.
 
 
 

@@ -7,22 +7,20 @@ amelyek alapján az automatizált Selenium tesztek elkészültek.
 
 Az alábbiakban részletesen, a vizsgaremek követelményeihez igazítva összegyűjtöttem a lépéseket és a teszteseteket a Practice Software Testing - Toolshop ([https://ecommerce-playground.lambdatest.io/](https://ecommerce-playground.lambdatest.io/)) webalkalmazáshoz, amely minden kötelező funkciót lefed.
 
-## Összefoglaló táblázat
+## Összefoglaló 
 
-Vizsgakövetelmény									Lefedő teszteset(ek)
-Regisztráció										TC01, TC02
-Bejelentkezés										TC01, TC03 
-Adatkezelési nyilatkozat használata					TC01, TC04
-Adatok listázása									TC05
-Több oldalas lista bejárása							TC05, TC06
-Új adat bevitel										TC07
-Ismételt és sorozatos adatbevitel adatforrásból		TC08
-Meglévő adat módosítás								TC09
-Adat vagy adatok törlése							TC10
-Adatok lementése felületről							TC11
-Kijelentkezés										TC01, TC06, TC08
-
-TODO!!! külön excel kell és ide,csak képet csatolj.
+Vizsgakövetelmény									
+Regisztráció									
+Bejelentkezés										
+Adatkezelési nyilatkozat használata				
+Adatok listázása									
+Több oldalas lista bejárása							
+Új adat bevitel										
+Ismételt és sorozatos adatbevitel adatforrásból		
+Meglévő adat módosítás								
+Adat vagy adatok törlése							
+Adatok lementése felületről							
+Kijelentkezés										
 
 ## TC01 Sikeres regisztráció ellenőrzése
 
@@ -120,7 +118,7 @@ Válasszuk ki az "iMac" terméket. Ezután megjelenik a termék oldala.
 A "BUY NOW" gombra kattintás.
 
 
-Elvárt eredmény: Minden kiválasztott oldal megfelelően betöltődik. Az aktív oldalszám és az URL lapozási paramétere megváltozik. Minden megnyitott oldalon termékek jelennek meg, és az utolsó oldalról nem lehet továbblépni.
+Elvárt eredmény: A vásárlási folyamat oldalai megfelelően betöltődnek, a rendelés sikeresen létrejön, és megjelenik a „Your order has been placed!” üzenet.
 
 ## TC07 Új cím hozzáadásának ellenőrzése
 
@@ -238,4 +236,3 @@ A létrehozott CSV-fájl létezésének ellenőrzése.
 Elvárt eredmény:
 Az output/cart.csv fájl sikeresen létrejön, és a kosárban
 található termékek adatait tartalmazza.
-
