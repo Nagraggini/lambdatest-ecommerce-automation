@@ -213,4 +213,29 @@ Elvárt eredmény: A kiválasztott cím sikeresen törlődik. A törölt cím m�
 
 ## TC11 Kosár tartalmának lementése
 
+Teszt rövid leírása:
+A kosárban található termékek adatainak összegyűjtése és CSV-fájlba történő mentése.
+
+Előfeltétel:
+A webáruház elérhető, és a termékek hozzáadhatók a kosárhoz.
+A kimeneti mappa írható.
+
+Teszt lépések:
+
+Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
+Az első iMac termék megnyitása.
+A termék mennyiségének 5 darabra állítása.
+Az iMac termék kosárba helyezése.
+Visszatérés a kezdőoldalra.
+A HTC Touch HD termék megnyitása.
+A termék mennyiségének 3 darabra állítása.
+A HTC Touch HD termék kosárba helyezése.
+A kosár megnyitása és a kosár szerkesztési oldalának megnyitása.
+A kosárban található termékek adatainak összegyűjtése.
+A kosár adatainak mentése az output/cart.csv fájlba.
+A létrehozott CSV-fájl létezésének ellenőrzése.
+
+Elvárt eredmény:
+Az output/cart.csv fájl sikeresen létrejön, és a kosárban
+található termékek adatait tartalmazza.
 
