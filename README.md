@@ -1,6 +1,5 @@
 # vizsgaremek-fa-260117-2
 
-
 **Készítette:** Freud Andrea
 
 **Tesztelt webalkalmazás:**  [LambdaTest E-Commerce Playground](https://ecommerce-playground.lambdatest.io/)

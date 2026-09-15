@@ -11,16 +11,16 @@ Az alábbiakban részletesen, a vizsgaremek követelményeihez igazítva összeg
 
 Vizsgakövetelmény									Lefedő teszteset(ek)
 Regisztráció										TC01, TC02
-Bejelentkezés										TC03, 
+Bejelentkezés										TC01, TC03 
 Adatkezelési nyilatkozat használata					TC01, TC04
 Adatok listázása									TC05
-Több oldalas lista bejárása							TC06
+Több oldalas lista bejárása							TC05, TC06
 Új adat bevitel										TC07
 Ismételt és sorozatos adatbevitel adatforrásból		TC08
 Meglévő adat módosítás								TC09
 Adat vagy adatok törlése							TC10
 Adatok lementése felületről							TC11
-Kijelentkezés										TC01
+Kijelentkezés										TC01, TC06, TC08
 
 TODO!!! külön excel kell és ide,csak képet csatolj.
 
@@ -32,12 +32,12 @@ Előfeltétel: Az email ne szerepeljen az adatbázisban.
 
 Teszt lépések:
 
-1. Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-2. My account → Register kiválasztása.
-3. First Name, Last Name, E-Mail, Telephone, Password és Password Confirm kitöltése érvényes adatokkal.
-4. A Newsletter: No marad kiválasztva.
-5. „I have read and agree to the Privacy Policy” jelölőnégyzet bejelölése.
-6. Continue gombra kattintás.
+Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
+My account → Register kiválasztása.
+First Name, Last Name, E-Mail, Telephone, Password és Password Confirm kitöltése érvényes adatokkal.
+A Newsletter: No marad kiválasztva.
+„I have read and agree to the Privacy Policy” jelölőnégyzet bejelölése.
+Continue gombra kattintás.
 
 Elvárt eredmény: A fiók létrejön. Az oldalon megjelenik a sikeres regisztrációs üzenet ("Your Account Has Been Created!”), és a felhasználói fiók elérhető, látszik a "Logout" gomb.
 
@@ -47,12 +47,12 @@ Teszt rövid leírása: Új felhasználói fiók sikertelen létrehozása.
 
 Teszt lépések:
 
-1. Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
-2. My account → Register kiválasztása.
-3. First Name, Last Name, E-Mail, Telephone, Password és Password Confirm kitöltése érvényes adatokkal.
-4. Newsletter: No kiválasztása.
-5. „I have read and agree to the Privacy Policy” jelölőnégyzet üresen hagyása.
-6. Continue gombra kattintás.
+Navigáció a https://ecommerce-playground.lambdatest.io/ oldalra.
+My account → Register kiválasztása.
+First Name, Last Name, E-Mail, Telephone, Password és Password Confirm kitöltése érvényes adatokkal.
+Newsletter: No kiválasztása.
+„I have read and agree to the Privacy Policy” jelölőnégyzet üresen hagyása.
+Continue gombra kattintás.
 
 Elvárt eredmény: Sikertelen a regisztráció és az oldal tetején megjelenik megjelenik egy hibaüzenet: 
 "Warning: You must agree to the Privacy Policy!"
@@ -160,7 +160,7 @@ Kattintás a „Register” gombra.
 A regisztrációs űrlap kitöltése az aktuális CSV-adatsor értékeivel:
 First Name
 Last Name
-E-Mail
+E-Mail (Random email címet generálunk, mert nem lehet törölni a fiókot az adatbázisból.)
 Telephone
 Password
 Password Confirm
