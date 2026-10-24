@@ -31,11 +31,11 @@ public class HomePage extends BasePage{
 	}
 	
 	/**
-	 * Megnyitja a weboldalt és validálja is.
+	 * Megnyitja a weboldalt és kiírja a terminálba az oldalnevét stb.
+	 * Így láthatjuk, ha pl.: botvédelem van az oldalon.
 	 */
 	public HomePage open() {
-		driver.get("https://ecommerce-playground.lambdatest.io/");
-		// Validáljuk, hogy betöltött-e az oldal. Oldal szintű várakoztatás.
+		driver.get("https://ecommerce-playground.lambdatest.io/");	
 
 		System.out.println("HomePage open() metódus: ");
 		System.out.println("Aktuális URL: " + driver.getCurrentUrl());

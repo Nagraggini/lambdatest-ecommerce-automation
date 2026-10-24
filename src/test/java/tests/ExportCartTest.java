@@ -30,8 +30,6 @@ class ExportCartTest extends BaseTest {
 		Path path = CsvFileWriter.csvFileWriter(shoppingCartList, "cart.csv");
 		
 		assertTrue(path.toFile().exists());
-		
-
 	}
 
 }

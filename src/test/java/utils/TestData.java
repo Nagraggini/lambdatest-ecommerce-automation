@@ -2,6 +2,9 @@ package utils;
 
 import java.security.SecureRandom;
 
+/**
+ * Tesztadatok generálása.
+ */
 public class TestData {
 
     private final String email;

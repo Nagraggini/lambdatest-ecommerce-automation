@@ -72,7 +72,9 @@ public abstract class BasePage {
 		wait.until(ExpectedConditions.attributeToBe(locator, attribute, value));
 	}
 
-	/** Leellenőrizzük, hogy betöltött-e az adott komponens szövege. */
+	/**
+	 *  Leellenőrizzük, hogy betöltött-e az adott komponens szövege. 
+	 */
 	protected Boolean waitUntilTextToBe(By locator, String text) {
 		return wait.until(ExpectedConditions.textToBe(locator, text));
 	}
@@ -112,20 +114,11 @@ public abstract class BasePage {
 		}
 	}
 
-	/** Egy HTML elem valamelyik attribútumának értékének kiolvasásához. */
+	/** 
+	 * Egy HTML elem valamelyik attribútumának értékének kiolvasásához. 
+	*/
 	protected String getAttribute(By locator, String attribute) {
 		return waitUntilVisible(locator).getAttribute(attribute);
-	}
-
-	/** Középre görgetés. */
-	// Ez is kell hozzá: import org.openqa.selenium.JavascriptExecutor;
-	protected void scrollToElement(By locator) {
-		WebElement element = waitUntilVisible(locator);
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript(
-				"arguments[0].scrollIntoView({block: 'center'});",
-				element);
 	}
 
 	// IV. select

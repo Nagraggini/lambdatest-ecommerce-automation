@@ -10,6 +10,12 @@ import com.opencsv.CSVWriter;
 
 public class CsvFileWriter {
 
+	/**
+	 * Fájlba írás.
+	 * @param shoppingCartList
+	 * @param fileName
+	 * @return
+	 */
 	public static Path csvFileWriter(ArrayList<ShoppingCart> shoppingCartList, String fileName) {
 
 		// A mappa megadása.
