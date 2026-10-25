@@ -1,9 +1,13 @@
+
 name: Run Selenium Tests
 
 on:
   push:
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   tests:
@@ -29,6 +33,8 @@ jobs:
           chromedriver --version || true
 
       - name: Run Maven tests
+        id: tests
+        continue-on-error: true
         run: ./mvnw -B clean test -DCI=true
 
       - name: Upload Surefire reports
@@ -36,4 +42,34 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
-          path: target/surefire-reports
+          path: target/surefire-reports/
+          if-no-files-found: ignore
+
+      - name: Generate Allure Report
+        id: allure
+        if: always()
+        continue-on-error: true
+        run: ./mvnw -B allure:report
+
+      - name: Upload offline Allure Report
+        if: always() && steps.allure.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Check test and report status
+        if: always()
+        run: |
+          if [ "${{ steps.tests.outcome }}" != "success" ]; then
+            echo "Selenium tests failed."
+            exit 1
+          fi
+
+          if [ "${{ steps.allure.outcome }}" != "success" ]; then
+            echo "Allure report generation failed."
+            exit 1
+          fi
+
