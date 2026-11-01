@@ -60,6 +60,7 @@
       <scope>test</scope>
     </dependency>
         
+        <!-- Allure report generáláshoz terminálban: ./mvnw allure:report -->
      <dependency>
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-junit5</artifactId>
